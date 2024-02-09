@@ -55,15 +55,19 @@ const CenterSection = () => {
     },
   ];
   return (
-    <section className="flex flex-col gap-11">
+    <section className="flex flex-col gap-11 pb-4 md:pb-8">
       <div className="flex flex-col gap-3">
         <h3 className="text-lg text-indigo-600 font-bold">Why Fiber?</h3>
-        <h1 className="text-4xl font-bold">
+        <h1 className="text-4xl font-bold md:hidden">
           A good portfolio <br /> means good <br />
           employability.
         </h1>
+        <h1 className="hidden md:block text-4xl font-bold">
+          A good portfolio means good <br />
+          employability.
+        </h1>
       </div>
-      <div className="flex flex-col gap-8">
+      <div className="flex flex-col gap-8 md:flex-row">
         {FirstCardData?.map((item, index) => (
           <div className="flex flex-col gap-4" key={index}>
             <Image src={item.icon} alt="clock" />
@@ -74,28 +78,33 @@ const CenterSection = () => {
           </div>
         ))}
       </div>
-      <div className="flex flex-col gap-12 bg-indigo-600 rounded-2xl p-7">
+
+      <div className="flex flex-col md:flex-row md:items-center gap-12 md:gap-0  bg-indigo-600 rounded-2xl p-7  md:justify-around">
         <div className="flex flex-col gap-4">
           <h1 className="text-white font-bold text-4xl">
             Divercify your <br /> portfolio.
           </h1>
-          <p className="text-sm text-slate-200 leading-6">
+          <p className="md:hidden text-sm text-slate-200 leading-6">
             Create an even more impressive portfolio by creating case studies
             for your projects. Simply follow our step-by-step guide.
           </p>
+          <p className="hidden md:block text-sm text-slate-200 leading-6">
+            Create an even more impressive portfolio by <br /> creating case studies
+            for your projects. Simply <br />follow our step-by-step guide.
+          </p>
           <Button
             variant={"default"}
-            className="w-full text-indigo-600 bg-white font-bold"
+            className="w-full md:w-1/2 text-indigo-600 bg-white font-bold"
           >
             Start Free Trial
           </Button>
         </div>
-        <div>
+        <div className="md:max-w-lg">
           <Image src={pageImg} alt="pageImg" />
         </div>
       </div>
 
-      <div className="flex flex-col gap-7">
+      <div className="flex flex-col md:flex-row gap-7">
         {FeedbackCard.map((item, index) => (
           <div
             className="flex flex-col gap-3 p-3 border rounded-lg"
